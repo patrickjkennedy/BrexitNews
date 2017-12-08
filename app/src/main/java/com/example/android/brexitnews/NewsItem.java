@@ -17,7 +17,7 @@ public class NewsItem {
     }
 
     public String getSectionType(){
-        return mSectionName + " | " + mType;
+        return mSectionName + " | " + capitalizeFirstLetter(mType);
     }
 
     public String getWebTitle(){
@@ -32,5 +32,11 @@ public class NewsItem {
         return mWebPublicationDate;
     }
 
+    public String capitalizeFirstLetter(String original) {
+        if (original == null || original.length() == 0) {
+            return original;
+        }
+        return original.substring(0, 1).toUpperCase() + original.substring(1);
+    }
 
 }
