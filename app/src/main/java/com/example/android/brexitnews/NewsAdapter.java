@@ -10,9 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.time.Instant;
 import java.util.List;
-import java.util.Date;
 
 /**
  * Created by pkennedy on 12/8/17.
@@ -48,7 +46,7 @@ public class NewsAdapter extends ArrayAdapter<NewsItem> {
         TextView title = (TextView) listItemView.findViewById(R.id.title);
 
         // Set the Title
-        sectionType.setText(currentNewsItem.getWebTitle());
+        title.setText(currentNewsItem.getWebTitle());
 
         // Get the PubDate TextView
         TextView pubDate = (TextView) listItemView.findViewById(R.id.pubDate);

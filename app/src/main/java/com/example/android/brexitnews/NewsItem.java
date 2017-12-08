@@ -6,18 +6,18 @@ package com.example.android.brexitnews;
 
 public class NewsItem {
 
-    private String mType, mSectionId, mWebTitle, mWebUrl, mWebPublicationDate;
+    private String mType, mSectionName, mWebTitle, mWebUrl, mWebPublicationDate;
 
-    public NewsItem(String type, String sectionId, String webTitle, String webUrl, String webPublicationDate){
+    public NewsItem(String type, String sectionName, String webTitle, String webUrl, String webPublicationDate){
         mType = type;
-        mSectionId = sectionId;
+        mSectionName = sectionName;
         mWebTitle = webTitle;
         mWebUrl = webUrl;
         mWebPublicationDate = webPublicationDate;
     }
 
     public String getSectionType(){
-        return mSectionId + " | " + mType;
+        return mSectionName + " | " + mType;
     }
 
     public String getWebTitle(){
