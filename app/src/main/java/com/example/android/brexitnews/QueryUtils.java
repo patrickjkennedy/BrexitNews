@@ -72,18 +72,20 @@ public final class QueryUtils {
         try {
             JSONObject jsonObj = new JSONObject(jsonResponse);
 
-            // Get JSON Array Node "response"
-            JSONArray response = jsonObj.getJSONArray("response");
+            // Get JSON Object "response"
+            JSONObject response = jsonObj.getJSONObject("response");
 
-            // Loop through each feature in the array
-            for(int i = 0; i < response.length(); i++){
-                JSONObject resp = response.getJSONObject(i);
-                JSONObject results = resp.getJSONObject("results");
-                String type = results.getString("type");
-                String sectionName = results.getString("sectionName");
-                String webTitle = results.getString("webTitle");
-                String webUrl = results.getString("webUrl");
-                String webPublicationDate = results.getString("webPublicationDate");
+            // Get the JSON Array "results"
+            JSONArray results = response.getJSONArray("results");
+
+            // Loop through each result in the array
+            for(int i = 0; i < results.length(); i++){
+                JSONObject r = results.getJSONObject(i);
+                String type = r.getString("type");
+                String sectionName = r.getString("sectionName");
+                String webTitle = r.getString("webTitle");
+                String webUrl = r.getString("webUrl");
+                String webPublicationDate = r.getString("webPublicationDate");
 
 
                 // Create Earthquake java object from magnitude, location, and time
