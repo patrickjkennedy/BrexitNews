@@ -24,4 +24,22 @@
     <string name="settings_order_by_oldest_label">Oldest</string>
     <string name="settings_order_by_oldest_value" translatable="false">oldest</string>
 
+
+    <!-- Strings For Section Preference -->
+    <string name="settings_section_label">Section</string>
+    <string name="settings_section_key" translatable="false">section</string>
+    <string name="settings_section_default" translatable="false">@string/settings_order_by_relevance_value</string>
+
+    <!-- Label for section politics option [CHAR LIMIT=20] -->
+    <string name="settings_section_politics_label">Politics</string>
+    <string name="settings_section_politics_value" translatable="false">politics</string>
+
+    <!-- Label for section business option [CHAR LIMIT=20] -->
+    <string name="settings_section_business_label">Business</string>
+    <string name="settings_section_business_value" translatable="false">business</string>
+
+    <!-- Label for section most oldest option -->
+    <string name="settings_section_opinion_label">Opinion</string>
+    <string name="settings_section_opinion_value" translatable="false">commentisfree</string>
+
 </resources>

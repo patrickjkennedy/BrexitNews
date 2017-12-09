@@ -124,13 +124,23 @@ public class NewsActivity extends AppCompatActivity
         // buildUpon prepares the baseUri that we just parsed so we can add query parameters to it
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
+        // Get the orderBy string
+
         String orderBy  = sharedPrefs.getString(
                 getString(R.string.settings_order_by_key),
                 getString(R.string.settings_order_by_default)
         );
 
-        // Append query parameter and its value. For example, the `format=geojson`
+        // Get the section string
+
+        String section  = sharedPrefs.getString(
+                getString(R.string.settings_section_key),
+                getString(R.string.settings_section_default)
+        );
+
+        // Append query parameter and its value.
         uriBuilder.appendQueryParameter("order-by", orderBy);
+        uriBuilder.appendQueryParameter("section", section);
         uriBuilder.appendQueryParameter("q", "brexit");
         uriBuilder.appendQueryParameter("api-key", "test");
 
