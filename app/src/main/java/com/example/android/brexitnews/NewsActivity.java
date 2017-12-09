@@ -44,7 +44,7 @@ public class NewsActivity extends AppCompatActivity
      * URL to query the Guardian API for Brexit news
      */
     private static final String GUARDIAN_REQUEST_URL =
-            "http://content.guardianapis.com/search?order-by=newest&q=brexit&api-key=test";
+            "http://content.guardianapis.com/search";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,8 +113,20 @@ public class NewsActivity extends AppCompatActivity
 
     @Override
     public Loader<List<NewsItem>> onCreateLoader(int i, Bundle bundle) {
-        // Create a new loader for the given URL
-        return new NewsLoader(this, GUARDIAN_REQUEST_URL);
+
+        // parse breaks apart the URI string that's passed into its parameter
+        Uri baseUri = Uri.parse(GUARDIAN_REQUEST_URL);
+
+        // buildUpon prepares the baseUri that we just parsed so we can add query parameters to it
+        Uri.Builder uriBuilder = baseUri.buildUpon();
+
+        // Append query parameter and its value. For example, the `format=geojson`
+        uriBuilder.appendQueryParameter("order-by", "newest");
+        uriBuilder.appendQueryParameter("q", "brexit");
+        uriBuilder.appendQueryParameter("api-key", "test");
+
+        // Return the completed uri "http://content.guardianapis.com/search?order-by=newest&q=brexit&api-key=test"
+        return new NewsLoader(this, uriBuilder.toString());
     }
 
     @Override
