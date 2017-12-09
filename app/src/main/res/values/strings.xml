@@ -10,7 +10,11 @@
     <!-- Strings For Order-By Preference -->
     <string name="settings_order_by_label">Order By</string>
     <string name="settings_order_by_key" translatable="false">order-by</string>
-    <string name="settings_order_by_default" translatable="false">@string/settings_order_by_newest_value</string>
+    <string name="settings_order_by_default" translatable="false">@string/settings_order_by_relevance_value</string>
+
+    <!-- Label for order-by relevance option [CHAR LIMIT=20] -->
+    <string name="settings_order_by_relevance_label">Relevance</string>
+    <string name="settings_order_by_relevance_value" translatable="false">relevance</string>
 
     <!-- Label for order-by newest option -->
     <string name="settings_order_by_newest_label">Newest</string>
@@ -19,9 +23,5 @@
     <!-- Label for order-by most oldest option -->
     <string name="settings_order_by_oldest_label">Oldest</string>
     <string name="settings_order_by_oldest_value" translatable="false">oldest</string>
-
-    <!-- Label for order-by relevance option [CHAR LIMIT=20] -->
-    <string name="settings_order_by_relevance_label">Relevance</string>
-    <string name="settings_order_by_relevance_value" translatable="false">relevance</string>
 
 </resources>
