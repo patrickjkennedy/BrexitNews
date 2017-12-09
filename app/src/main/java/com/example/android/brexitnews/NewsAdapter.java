@@ -18,11 +18,12 @@ import java.util.List;
 
 public class NewsAdapter extends ArrayAdapter<NewsItem> {
 
+    private static final String ISO8601_SEPARATOR = "T";
+
     public NewsAdapter(Activity context, List<NewsItem> newsItems) {
         super(context, 0, newsItems);
     }
 
-    @SuppressLint("SetTextI18n")
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -51,10 +52,37 @@ public class NewsAdapter extends ArrayAdapter<NewsItem> {
         // Get the PubDate TextView
         TextView pubDate = (TextView) listItemView.findViewById(R.id.pubDate);
 
-        // Set the PubDate
-        //TODO: Need to reformat this
-        pubDate.setText(R.string.published + currentNewsItem.getPubDate());
+        // Extract the date and time from ISO8601 string and construct the return string
+        String date = getDateString(currentNewsItem.getPubDate());
+        String time = getTimeString(currentNewsItem.getPubDate());
+        String displayDateTime = getContext().getString(R.string.publishedString) + date + " | " + time;
+
+        // Set the displayDateTime
+        pubDate.setText(displayDateTime);
 
         return listItemView;
     }
+
+    private String getDateString(String pubDate){
+        if(pubDate.contains(ISO8601_SEPARATOR)){
+            String[] dateTime = pubDate.split(ISO8601_SEPARATOR);
+            return dateTime[0];
+        }
+        else return null;
+    }
+
+    private String getTimeString(String pubDate){
+        if(pubDate.contains(ISO8601_SEPARATOR)){
+            String[] dateTime = pubDate.split(ISO8601_SEPARATOR);
+            String time = dateTime[1];
+            return removeLastChar(time);
+        }
+        else return null;
+    }
+
+    /*https://stackoverflow.com/questions/7438612/how-to-remove-the-last-character-from-a-string*/
+    private static String removeLastChar(String str) {
+        return str.substring(0, str.length() - 1);
+    }
+
 }

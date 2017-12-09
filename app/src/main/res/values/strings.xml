@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Brexit News</string>
     <string name="published">Published:</string>
-    <string name="no_internet">No internet connection</string>
-    <string name="no_data">No Brexit News Found</string>
+    <string name="no_internet">No Internet Connection</string>
+    <string name="no_data">No Data Found, Please Try Again</string>
+    <string name="publishedString">Published:\u0020</string>
 </resources>

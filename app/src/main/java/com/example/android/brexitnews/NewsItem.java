@@ -32,6 +32,7 @@ public class NewsItem {
         return mWebPublicationDate;
     }
 
+    /* https://stackoverflow.com/questions/5725892/how-to-capitalize-the-first-letter-of-word-in-a-string-using-java */
     public String capitalizeFirstLetter(String original) {
         if (original == null || original.length() == 0) {
             return original;
