@@ -142,7 +142,7 @@ public class NewsActivity extends AppCompatActivity
         uriBuilder.appendQueryParameter("order-by", orderBy);
         uriBuilder.appendQueryParameter("section", section);
         uriBuilder.appendQueryParameter("q", "brexit");
-        uriBuilder.appendQueryParameter("api-key", "test");
+        uriBuilder.appendQueryParameter("api-key", "7aefc3d9-c656-4cc6-a550-f6174d7393f0");
 
         // Return the completed uri "http://content.guardianapis.com/search?order-by=newest&q=brexit&api-key=test"
         return new NewsLoader(this, uriBuilder.toString());

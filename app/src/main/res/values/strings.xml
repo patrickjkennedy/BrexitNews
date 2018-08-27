@@ -28,7 +28,7 @@
     <!-- Strings For Section Preference -->
     <string name="settings_section_label">Section</string>
     <string name="settings_section_key" translatable="false">section</string>
-    <string name="settings_section_default" translatable="false">@string/settings_order_by_relevance_value</string>
+    <string name="settings_section_default" translatable="false">@string/settings_section_politics_value</string>
 
     <!-- Label for section politics option [CHAR LIMIT=20] -->
     <string name="settings_section_politics_label">Politics</string>
