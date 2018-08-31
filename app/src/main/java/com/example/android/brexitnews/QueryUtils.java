@@ -63,7 +63,7 @@ public final class QueryUtils {
 
     public static ArrayList<NewsItem> extractNewsItems(String jsonResponse) {
 
-        // Create an empty ArrayList that we can start adding earthquakes to
+        // Create an empty ArrayList
         ArrayList<NewsItem> newsItems = new ArrayList<>();
 
         // Try to parse the jsonResponse. If there's a problem with the way the JSON
@@ -88,7 +88,7 @@ public final class QueryUtils {
                 String webPublicationDate = r.getString("webPublicationDate");
 
 
-                // Create Earthquake java object from magnitude, location, and time
+                // Create newsItem object
                 newsItems.add(new NewsItem(type, sectionName, webTitle, webUrl, webPublicationDate));
             }
 

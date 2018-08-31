@@ -35,10 +35,10 @@ public class NewsLoader extends AsyncTaskLoader<List<NewsItem>> {
             return null;
         }
 
-        // Fetch the earthquake data (put in async task)
+        // Fetch the data (put in async task)
         String jsonResponse = QueryUtils.fetchNewsData(mUrl);
 
-        // Create a list of earthquake data.
+        // Create a list of NewsItem data.
         ArrayList<NewsItem> newsItems = QueryUtils.extractNewsItems(jsonResponse);
         return newsItems;
 

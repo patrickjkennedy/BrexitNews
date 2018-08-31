@@ -91,12 +91,10 @@ public class NewsActivity extends AppCompatActivity
     }
 
     /**
-     * Update the screen to display earthquake information from USGS.
+     * Update the screen to display Guardian API data
      */
     private void updateUi(final List<NewsItem> newsItems) {
 
-        // Create an {@link EarthquakeAdapter}, whose data source is a list of {@link earthquake}s. The
-        // adapter knows how to create list items for each item in the list.
         NewsAdapter adapter = new NewsAdapter(this, newsItems);
 
         listView.setAdapter(adapter);
@@ -142,9 +140,9 @@ public class NewsActivity extends AppCompatActivity
         uriBuilder.appendQueryParameter("order-by", orderBy);
         uriBuilder.appendQueryParameter("section", section);
         uriBuilder.appendQueryParameter("q", "brexit");
-        uriBuilder.appendQueryParameter("api-key", "7aefc3d9-c656-4cc6-a550-f6174d7393f0");
+        uriBuilder.appendQueryParameter("api-key", BuildConfig.THE_GUARDIAN_API_KEY);
 
-        // Return the completed uri "http://content.guardianapis.com/search?order-by=newest&q=brexit&api-key=test"
+        // Return the completed uri
         return new NewsLoader(this, uriBuilder.toString());
     }
 
